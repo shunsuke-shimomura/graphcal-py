@@ -7,7 +7,7 @@ name = "graphcal-py"
 version = "0.0.1"
 description = "Minimal subprocess wrapper for the graphcal CLI"
 requires-python = ">=3.10"
-license = { text = "MIT OR Apache-2.0" }
+license = { text = "MIT" }
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/graphcal"]
