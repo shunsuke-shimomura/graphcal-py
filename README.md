@@ -95,7 +95,8 @@ CLI failures raise `GraphcalEvaluationError` (for `eval`) or
 ## Development
 
 ```sh
-PYTHONPATH=src python -m unittest discover -v
+uv sync
+uv run pytest
 graphcal check examples/orbital_transfer.gcl
 ```
 
