@@ -1,25 +1,27 @@
-"""Minimal subprocess wrapper for the graphcal CLI."""
-from __future__ import annotations
+"""Python wrapper for the graphcal CLI (`graphcal eval --format json`)."""
+from .cli import check, eval, eval_file
+from .errors import (
+    GraphcalCheckError,
+    GraphcalCommandError,
+    GraphcalError,
+    GraphcalEvaluationError,
+)
+from .overrides import Override, OverrideInput, normalize_overrides
+from .project import GraphcalProject
+from .result import GraphcalResult, GraphcalValue
 
-import json
-import subprocess
-from pathlib import Path
-from typing import Any
-
-
-def eval(
-    file: str | Path,
-    *,
-    overrides: dict[str, str] | None = None,
-    binary: str = "graphcal",
-) -> dict[str, Any]:
-    """Run `graphcal eval --format json` on *file* and return parsed JSON.
-
-    Raises `subprocess.CalledProcessError` on non-zero exit (compile / runtime /
-    assertion failures). stderr is attached to the exception.
-    """
-    cmd = [binary, "eval", "--format", "json", str(file)]
-    for k, v in (overrides or {}).items():
-        cmd += ["--set", f"{k}={v}"]
-    result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-    return json.loads(result.stdout)
+__all__ = [
+    "eval",
+    "eval_file",
+    "check",
+    "Override",
+    "OverrideInput",
+    "normalize_overrides",
+    "GraphcalResult",
+    "GraphcalValue",
+    "GraphcalProject",
+    "GraphcalError",
+    "GraphcalCommandError",
+    "GraphcalEvaluationError",
+    "GraphcalCheckError",
+]

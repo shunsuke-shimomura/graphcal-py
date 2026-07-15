@@ -1,0 +1,18 @@
+// Orbital insertion burn sizing for a small upper stage.
+
+param dry_mass: Mass = 1200.0 kg;
+param propellant_mass: Mass = 2800.0 kg;
+param specific_impulse: Time = 320.0 s;
+param burn_time: Time = 180.0 s;
+param parking_orbit_altitude: Length = 400.0 km;
+param target_inclination: Angle = 51.6 deg;
+
+const node g0: Acceleration = 9.80665 m/s^2;
+const node earth_radius: Length = 6378.137 km;
+
+node exhaust_velocity: Velocity = @specific_impulse * @g0;
+node mass_ratio: Dimensionless = (@dry_mass + @propellant_mass) / @dry_mass;
+node delta_v: Velocity = @exhaust_velocity * ln(@mass_ratio);
+node average_thrust: Force = @propellant_mass * @exhaust_velocity / @burn_time;
+node orbital_radius: Length = (@earth_radius + @parking_orbit_altitude) -> km;
+node inclination_sine: Dimensionless = sin(@target_inclination);

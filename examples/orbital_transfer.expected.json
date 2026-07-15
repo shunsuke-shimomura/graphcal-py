@@ -1,0 +1,71 @@
+{
+  "const": {
+    "earth_radius": {
+      "display_value": 6378.137,
+      "si_value": 6378137.0,
+      "unit": "km"
+    },
+    "g0": {
+      "display_value": 9.80665,
+      "si_value": 9.80665,
+      "unit": "m/s^2"
+    }
+  },
+  "node": {
+    "average_thrust": {
+      "si_value": 48815.324444444435,
+      "unit": "m*kg/s^2"
+    },
+    "delta_v": {
+      "si_value": 3778.2207684937407,
+      "unit": "m/s"
+    },
+    "exhaust_velocity": {
+      "si_value": 3138.1279999999997,
+      "unit": "m/s"
+    },
+    "inclination_sine": {
+      "si_value": 0.7836934573258398
+    },
+    "mass_ratio": {
+      "si_value": 3.3333333333333335
+    },
+    "orbital_radius": {
+      "display_value": 6788.137,
+      "si_value": 6788137.0,
+      "unit": "km"
+    }
+  },
+  "param": {
+    "burn_time": {
+      "display_value": 180.0,
+      "si_value": 180.0,
+      "unit": "s"
+    },
+    "dry_mass": {
+      "display_value": 1200.0,
+      "si_value": 1200.0,
+      "unit": "kg"
+    },
+    "parking_orbit_altitude": {
+      "display_value": 410.0,
+      "si_value": 410000.0,
+      "unit": "km"
+    },
+    "propellant_mass": {
+      "display_value": 2800.0,
+      "si_value": 2800.0,
+      "unit": "kg"
+    },
+    "specific_impulse": {
+      "display_value": 320.0,
+      "si_value": 320.0,
+      "unit": "s"
+    },
+    "target_inclination": {
+      "display_value": 51.6,
+      "si_value": 0.9005898940290741,
+      "unit": "deg"
+    }
+  }
+}
